@@ -1,9 +1,12 @@
-
 :root {
     --primary: #0b1f4d;
     --accent: #f5b700;
     --background: #f4f6f9;
     --text: #222222;
+}
+
+* {
+    box-sizing: border-box;
 }
 
 body {
@@ -37,12 +40,16 @@ nav ul {
     list-style-type: none;
     margin: 0;
     padding: 15px;
-    text-align: center;
+    
+    /* Flexbox */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
 }
 
 nav li {
-    display: inline;
-    margin: 0 15px;
+    margin: 0;
 }
 
 nav a {
@@ -60,7 +67,7 @@ main {
     margin-top: 20px;
 }
 
-main div {
+main > div {
     max-width: 1200px;
     margin: auto;
 }
@@ -76,6 +83,7 @@ h3 {
 
 p {
     font-size: 16px;
+    line-height: 1.6;
 }
 
 button {
@@ -120,7 +128,6 @@ tr:hover {
 form {
     background-color: white;
     padding: 20px;
-    margin: 25px 0;
     border-radius: 8px;
     box-shadow: 0 2px 8px #cccccc;
 }
@@ -140,7 +147,6 @@ select {
 aside {
     background-color: white;
     padding: 20px;
-    margin: 25px 0;
     border-radius: 8px;
     box-shadow: 0 2px 8px #cccccc;
 }
@@ -160,6 +166,15 @@ ol {
     box-shadow: 0 2px 8px #cccccc;
 }
 
+/* CSS Grid for booking form and summary */
+
+.booking-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 25px;
+    margin: 25px 0;
+}
+
 footer {
     background-color: var(--primary);
     color: white;
@@ -168,20 +183,59 @@ footer {
     margin-top: 30px;
 }
 
-@media (max-width: 768px) {
+/* Tablet */
+
+@media (max-width: 900px) {
 
     main {
-        padding: 20px;
+        padding: 25px;
     }
 
-    nav li {
-        display: block;
-        margin: 8px;
+    .booking-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    header {
+        margin-top: 150px;
+    }
+
+    main {
+        padding: 15px;
+    }
+
+    .booking-container {
+        grid-template-columns: 1fr;
     }
 
     table {
         display: block;
         overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    form,
+    aside,
+    section {
+        padding: 15px;
+    }
+
+    input,
+    select {
+        width: 90%;
+        margin: 8px 0;
+    }
+
+    button {
+        padding: 10px 15px;
     }
 }
-
