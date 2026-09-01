@@ -1,0 +1,299 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"content="width=device-width,initial-scale=1.0">
+        <title>HOME|IPL BOOKING</title>
+    </head>
+    <body>
+        <header>
+            <h1>IPL Booking</h1>  
+        </header>
+        <nav>
+            <ul>
+               
+                <li><a href="index.html">HOME</a></li>
+                
+            </ul>
+        </nav>
+        <main>
+            <div>
+                <h2>WELCOME TO IPL BOOKING</h2>
+                <table>
+                    <thead>
+                        <tr>
+                    <th rowspan="2">MATCHES</th>
+                    <th rowspan="2">TEAMS</th>
+                    <th colspan="3">Ticket prices</th>
+                    <th rowspan="2">Date</th>
+                    <th rowspan="2">time</th>
+                    <th rowspan="2">venue</th>
+                    </tr>
+                    <tr>
+                        <th>General</th>
+                        <th>Premium</th>
+                        <th>VIP</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>RCB vs CSK</td>
+                            <td>₹2500</td>
+                            <td>₹4000</td>
+                            <td>₹6000</td>
+                            <td>2026-04-01</td>
+                            <td>19:30</td>
+                            <td>M Chinnaswamy Stadium</td>
+                            <td><button>Book Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>SRH vs PBKS</td>
+                            <td>₹3000</td>
+                            <td>₹4500</td>
+                            <td>₹6500</td>
+                            <td>2026-04-02</td>
+                            <td>19:30</td>
+                            <td>Wankhede Stadium</td>
+                            <td><button>Book Now</button></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>PBKS vs CSK</td>
+                            <td>₹2000</td>
+                            <td>₹3500</td>
+                            <td>₹5500</td>
+                            <td>2026-04-03</td>
+                            <td>19:30</td>
+                            <td>Eden Gardens</td>
+                            <td><button>Book Now</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <form>
+                    <label for="team">Select Team:</label>
+                    <select id="team" name="team">
+                        <option value="all">All Teams</option>
+                        <option value="RCB">RCB</option>
+                        <option value="CSK">CSK</option>
+                        <option value="SRH">SRH</option>
+                        <option value="PBKS">PBKS</option>
+                    </select>
+                    <form action="/book" method="post">
+                        <input type="hidden" name="match" value="01">
+                        <button type="submit">Book Now</button>
+                    
+                    </form>
+                </form>
+                <form action="/confirm" method="post">
+                    <label>Match:</label>
+                    <select name="match">
+                        <option value="01">RCB vs CSK</option>
+                        <option value="02">SRH vs PBKS</option>
+                        <option value="03">PBKS vs CSK</option>
+                    </select>
+                    <option>General</option>
+                    <option>Premium</option>
+                    <option>VIP</option>
+                </select>
+                <label>No. of Tickets:</label>
+                <input type="number" name="tickets" min="1" required>
+                <label>Name:</label>
+                <input type="text" required>
+                <label>Email:</label>
+                <input type="email" required>
+                <label>Phone number:</label>
+                <input type="tel" max="10" required>
+                <button type="submit">Confirm Booking</button>
+                </form>
+                
+                
+            </div>
+           
+        </main>
+      
+</html>```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>TICKETS | IPL BOOKING</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>IPL Booking</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="matches.html">MATCHES</a></li>
+            <li><a href="teams.html">TEAMS</a></li>
+            <li><a href="tickets.html">TICKETS</a></li>
+            <li><a href="guidelines.html">GUIDELINES</a></li>
+        </ul>
+    </nav>
+
+    <main>
+
+        <div>
+
+            <h2>WELCOME TO IPL BOOKING</h2>
+
+            <h3>Ticket Booking</h3>
+
+            <form action="/confirm" method="post">
+
+                <label for="match">Match:</label>
+
+                <select id="match" name="match">
+                    <option value="01">RCB vs CSK</option>
+                    <option value="02">SRH vs PBKS</option>
+                    <option value="03">PBKS vs CSK</option>
+                    <option value="04">MI vs KKR</option>
+                    <option value="05">RR vs DC</option>
+                    <option value="06">GT vs LSG</option>
+                    <option value="07">RCB vs MI</option>
+                    <option value="08">CSK vs KKR</option>
+                    <option value="09">SRH vs RR</option>
+                    <option value="10">DC vs GT</option>
+                </select>
+
+                <br><br>
+
+                <label for="stand">Stand Category:</label>
+
+                <select id="stand" name="stand">
+                    <option value="general">General</option>
+                    <option value="premium">Premium</option>
+                    <option value="vip">VIP</option>
+                </select>
+
+                <br><br>
+
+                <label for="tickets">No. of Tickets:</label>
+
+                <input type="number"
+                       id="tickets"
+                       name="tickets"
+                       min="1"
+                       max="10"
+                       required>
+
+                <br><br>
+
+                <label for="name">Name:</label>
+
+                <input type="text"
+                       id="name"
+                       name="name"
+                       required>
+
+                <br><br>
+
+                <label for="email">Email:</label>
+
+                <input type="email"
+                       id="email"
+                       name="email"
+                       required>
+
+                <br><br>
+
+                <label for="phone">Phone number:</label>
+
+                <input type="tel"
+                       id="phone"
+                       name="phone"
+                       maxlength="10"
+                       required>
+
+                <br><br>
+
+                <button type="submit">Confirm Booking</button>
+
+            </form>
+
+
+            <aside>
+
+                <h2>Booking Summary</h2>
+
+                <p>
+                    <strong>Selected Match:</strong>
+                    RCB vs CSK
+                </p>
+
+                <p>
+                    <strong>Date & Time:</strong>
+                    2026-04-01, 19:30
+                </p>
+
+                <p>
+                    <strong>Venue:</strong>
+                    M Chinnaswamy Stadium
+                </p>
+
+                <p>
+                    <strong>Stand:</strong>
+                    General
+                </p>
+
+                <p>
+                    <strong>Ticket Price:</strong>
+                    ₹2500
+                </p>
+
+                <p>
+                    <strong>Quantity:</strong>
+                    1
+                </p>
+
+                <p>
+                    <strong>Total Amount:</strong>
+                    ₹2500
+                </p>
+
+            </aside>
+
+
+            <section>
+
+                <h2>My Ticket Bookings</h2>
+
+                <table border="1">
+
+                    <thead>
+                        <tr>
+                            <th>Booking ID</th>
+                            <th>Match</th>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Venue</th>
+                            <th>Stand</th>
+                            <th>No. of Tickets</th>
+                            <th>Total Amount</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                    </tbody>
+
+                </table>
+
+                <p>No bookings available yet.</p>
+
+            </section>
+
+        </div>
+
+    </main>
+
+</body>
+
+</html>
+
