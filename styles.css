@@ -239,3 +239,19 @@ footer {
         padding: 10px 15px;
     }
 }
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+#toast {
+display: none;
+position: fixed;
+top: 20px;
+left: 50%;
+transform: translateX(-50%);
+background-color: var(--primary);
+color: white;
+padding: 15px 30px;
+border-radius: 5px;
+z-index: 1000;
+font-weight: bold;
+}
