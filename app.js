@@ -11,9 +11,11 @@ document.getElementById("bookingForm").scrollIntoView({
 behavior: "smooth"
 });
 });
-
 document.getElementById("bookingForm").addEventListener("submit", function (event) {
 event.preventDefault();
 showToast();
-
+});
+document.addEventListener("DOMContentLoaded", function () {
+let demo = document.getElementById("demo");
+demo.textContent = "IPL 2026 brings exciting cricket matches featuring some of the best teams and players. Fans can enjoy thrilling matches and book their tickets to experience the excitement live.";
 });
